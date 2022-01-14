@@ -2,9 +2,7 @@
 package Admin;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -35,6 +33,20 @@ public class AdminController {
     }
 
     // POST (Create New Employee Data)
+    @RequestMapping(method = RequestMethod.POST, value = "/admin/employee/create")
+    public void create(@RequestBody Data data) {
+        adminService.createEmployee(data);
+    }
+
     // PUT (Update Employee Data)
+    @RequestMapping(method = RequestMethod.PUT, value = "/admin/employee/update/{id}")
+    public void update(@RequestBody Data data, @PathVariable Integer id) {
+        adminService.updateEmployee(id, data);
+    }
+
     // DELETE (Delete Employee Data)
+    @RequestMapping(method = RequestMethod.DELETE, value = "/admin/employee/delete/{id}")
+    public void delete(@PathVariable Integer id) {
+        adminService.deleteEmployee(id);
+    }
 }
