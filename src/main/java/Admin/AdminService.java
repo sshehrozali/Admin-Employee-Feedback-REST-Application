@@ -24,6 +24,10 @@ public class AdminService {
     public List<Data> viewAllData() {
         return allData;
     }
+    // Specific Employee Data
+    public Data viewSpecificData(Integer id) {
+        return allData.stream().filter(d -> d.getEmployeeID().equals(id)).findFirst().get();
+    }
 
     // CREATE
     // UPDATE

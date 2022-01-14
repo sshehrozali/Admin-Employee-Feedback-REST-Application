@@ -2,6 +2,7 @@
 package Admin;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -28,6 +29,11 @@ public class AdminController {
     }
 
     // GET (Specific Employee Data)
+    @RequestMapping("/admin/employee/view/{id}")
+    public Data viewSpecific(@PathVariable Integer id) {
+        return adminService.viewSpecificData(id);
+    }
+
     // POST (Create New Employee Data)
     // PUT (Update Employee Data)
     // DELETE (Delete Employee Data)
