@@ -26,7 +26,7 @@ public class AdminService {
             )
     );
 
-    // READ
+    // ALL GET METHODS //
     // All Employee Data
     public List<Data> viewAllData() {
         return allData;
@@ -40,11 +40,23 @@ public class AdminService {
         return allPerformances;
     }
 
-    // CREATE
+    // ALL POST METHODS //
+    // Creates a new Employee
     public void createEmployee(Data data) {
         allData.add(data);
     }
-    // UPDATE
+    // Sets New Performance for the Employee
+    public void addEmployeePerformance(Integer id, Performance performance) {
+        for (int i = 0; i < allPerformances.size(); i++) {
+            if(allPerformances.get(i).getID().equals(id)) {
+                allPerformances.set(i, performance);
+                System.out.println("Employee Performance Set");
+            }
+        }
+    }
+
+
+    // ALL PUT METHODS //
     public void updateEmployee(Integer id, Data data) {
         for (int i = 0; i < allData.size(); i++) {
             Data d = allData.get(i);    // Get single Object from Array
@@ -54,7 +66,11 @@ public class AdminService {
             }
         }
     }
-    // DELETE
+    public void updateEmployeePerformance(Integer id, Performance performance) {
+        addEmployeePerformance(id, performance);    // Use the same above function to update Employee's Performance (Re-Usability)
+    }
+
+    // ALL DELETE METHODS //
     public void deleteEmployee(Integer id) {
         allData.removeIf(d -> d.getEmployeeID().equals(id));    // Delete Employee Data (If id is found)
         System.out.println("Employee Deleted");

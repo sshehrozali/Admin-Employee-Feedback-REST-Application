@@ -56,5 +56,15 @@ public class AdminController {
         return adminService.showAllPerformances();
     }
 
+    // POST (Set Performance of the Employee by ID -> Primary Key)
+    @RequestMapping(method = RequestMethod.POST, value = "/admin/performance/add/{id}")
+    public void addPerformance(@RequestBody Performance performance, @PathVariable Integer id) {
+        adminService.addEmployeePerformance(id, performance);
+    }
 
+    // PUT (Update Performance of the Employee by ID -> Primary Key)
+    @RequestMapping(method = RequestMethod.PUT, value = "/admin/performance/update/{id}")
+    public void updatePerformance(@RequestBody Performance performance, @PathVariable Integer id) {
+        adminService.updateEmployeePerformance(id, performance);
+    }
 }
