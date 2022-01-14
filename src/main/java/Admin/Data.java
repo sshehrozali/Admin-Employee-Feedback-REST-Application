@@ -1,19 +1,20 @@
-// Admin Entity
 package Admin;
 
-public class Admin {
+public class Data {
 
     Integer EmployeeID;
     String EmployeeName;
+    String EmployeeReview;
 
     // Empty Constructor
-    public Admin() {
+    public Data() {
     }
 
     // Parameters Constructor
-    public Admin(Integer employeeID, String employeeName) {
+    public Data(Integer employeeID, String employeeName, String employeeReview) {
         EmployeeID = employeeID;
         EmployeeName = employeeName;
+        EmployeeReview = employeeReview;
     }
 
     // Getters & Setters
@@ -31,5 +32,13 @@ public class Admin {
 
     public void setEmployeeName(String employeeName) {
         EmployeeName = employeeName;
+    }
+
+    public String getEmployeeReview() {
+        return EmployeeReview;
+    }
+
+    public void setEmployeeReview(String employeeReview) {
+        EmployeeReview = employeeReview;
     }
 }
