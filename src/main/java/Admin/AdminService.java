@@ -13,10 +13,17 @@ public class AdminService {
     // Make some Employee Data
     private List<Data> allData = new ArrayList<> (
         Arrays.asList(
-                new Data(1, "Hasan", "He is very Good!"),
-                new Data(2, "Sheikh", "He is very Brilliant!"),
-                new Data(3, "Urwa", "She is very Gorgeous!")
+                new Data(1, "Hasan"),
+                new Data(2, "Sheikh")
         )
+    );
+
+    // Make some Performance Data
+    private List<Performance> allPerformances = new ArrayList<>(
+            Arrays.asList(
+                    new Performance(1, ""),
+                    new Performance(2, "")
+            )
     );
 
     // READ
@@ -27,6 +34,10 @@ public class AdminService {
     // Specific Employee Data
     public Data viewSpecificData(Integer id) {
         return allData.stream().filter(d -> d.getEmployeeID().equals(id)).findFirst().get();
+    }
+    // Show All Performances
+    public List<Performance> showAllPerformances() {
+        return allPerformances;
     }
 
     // CREATE

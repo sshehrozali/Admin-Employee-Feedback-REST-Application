@@ -49,4 +49,12 @@ public class AdminController {
     public void delete(@PathVariable Integer id) {
         adminService.deleteEmployee(id);
     }
+
+    // GET (Show All Employees Performances with their IDs -> Primary Key)
+    @RequestMapping("/admin/performance/all")
+    public List<Performance> performances() {
+        return adminService.showAllPerformances();
+    }
+
+
 }
