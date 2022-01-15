@@ -1,11 +1,16 @@
-package Database;
+package com.example.demo;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity
 public class Data {
 
-    Integer EmployeeID;
-    String EmployeeName;
-    boolean EmployeeParticipation;
-    String Feedback;
+    @Id
+    private Integer EmployeeID;
+    private String EmployeeName;
+    private boolean EmployeeParticipation;
+    private String Feedback;
 
     // Empty Constructor
     public Data() {

@@ -1,7 +1,12 @@
-package Database;
+package com.example.demo;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity
 public class Performance {
 
+    @Id
     Integer ID;
     String Performance;
 

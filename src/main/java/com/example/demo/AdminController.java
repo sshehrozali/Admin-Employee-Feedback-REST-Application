@@ -1,16 +1,10 @@
-// Admin Controller
-package Admin;
-
-// Import Database Packages -> Classes
-import Database.Data;
-import Database.Performance;
+package com.example.demo;// Import Database Packages -> Classes
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 public class AdminController {
@@ -33,7 +27,7 @@ public class AdminController {
 
     // GET (Specific Employee Data)
     @RequestMapping("api/admin/employee/view/{id}")
-    public Data viewSpecific(@PathVariable Integer id) {
+    public Optional<Data> viewSpecific(@PathVariable Integer id) {
         return adminService.viewSpecificData(id);
     }
 
