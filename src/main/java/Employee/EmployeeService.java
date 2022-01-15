@@ -31,5 +31,24 @@ public class EmployeeService {
             )
     );
 
+    // Empty Performance Data (If Employee Credentials FAILED to match in Database)
+    private List<Performance> emptyPerformances = new ArrayList<>(
+            Arrays.asList(
+                    new Performance(0, "")
+            )
+    );
 
+    // Display All Employee Performances
+    public List<Performance> displayEmployeesPerformances(Integer id) {
+        for (int i = 0; i < allData.size(); i++) {
+            if(allData.get(i).getEmployeeID().equals(id)) {
+                boolean check = allData.get(i).isEmployeeParticipation();
+                if(check) {
+                    return allPerformances;     // If ID is present & GRANTED ACCESS to participate (by Admin) -> Then return all performances
+                }
+            }
+        }
+        System.out.println("Wrong Credentials Provided. Your Employee ID Not Found.");
+        return emptyPerformances;
+    }
 }

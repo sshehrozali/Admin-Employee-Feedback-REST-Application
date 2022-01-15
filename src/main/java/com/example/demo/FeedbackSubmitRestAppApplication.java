@@ -5,7 +5,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication
-@ComponentScan(basePackages = "Admin")
+@ComponentScan(basePackages = {"Admin", "Employee"})
 public class FeedbackSubmitRestAppApplication {
 
 	public static void main(String[] args) {

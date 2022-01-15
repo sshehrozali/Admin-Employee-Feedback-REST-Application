@@ -19,9 +19,10 @@ public class AdminController {
     @Autowired
     private AdminService adminService;
 
-    @RequestMapping("/test")
-    public String test() {
-        return "Hello, I am a Spring Boot based Web App!";
+    // Admin Test API
+    @RequestMapping("api/admin/test")
+    public String adminAPI_test() {
+        return "Hi, I am an Admin API!";
     }
 
     // GET (All Employee Data)

@@ -18,9 +18,15 @@ public class EmployeeController {
     @Autowired
     private EmployeeService employeeService;
 
+    // Employee Test API
+    @RequestMapping("api/test")
+    public String employeeAPI_test() {
+        return "Hi, I am an Employee API!";
+    }
+
     // GET (Employee Login -> By ID -> Primary Key)
-//    @RequestMapping("/api/login/{id}")
-//    public List<Data> employeeDashboard(@PathVariable Integer id) {
-//        return employeeService.displayEmployeesPerformances(id);
-//    }
+    @RequestMapping("/api/login/{id}")
+    public List<Performance> employeeDashboard(@PathVariable Integer id) {
+        return employeeService.displayEmployeesPerformances(id);
+    }
 }
