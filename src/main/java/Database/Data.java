@@ -1,20 +1,22 @@
-package Employee;
+package Database;
 
 public class Data {
 
     Integer EmployeeID;
     String EmployeeName;
     boolean EmployeeParticipation;
+    String Feedback;
 
     // Empty Constructor
     public Data() {
     }
 
     // Parameters Constructor
-    public Data(Integer employeeID, String employeeName, boolean employeeParticipation) {
+    public Data(Integer employeeID, String employeeName, boolean employeeParticipation, String feedback) {
         EmployeeID = employeeID;
         EmployeeName = employeeName;
         EmployeeParticipation = employeeParticipation;
+        Feedback = feedback;
     }
 
     // Getters & Setters
@@ -40,5 +42,13 @@ public class Data {
 
     public void setEmployeeParticipation(boolean employeeParticipation) {
         EmployeeParticipation = employeeParticipation;
+    }
+
+    public String getFeedback() {
+        return Feedback;
+    }
+
+    public void setFeedback(String feedback) {
+        Feedback = feedback;
     }
 }
