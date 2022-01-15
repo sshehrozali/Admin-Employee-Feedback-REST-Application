@@ -43,11 +43,19 @@ public class EmployeeService {
         for (int i = 0; i < allData.size(); i++) {
             if(allData.get(i).getEmployeeID().equals(id)) {
                 boolean check = allData.get(i).isEmployeeParticipation();
-                if(check) {
-                    return allPerformances;     // If ID is present & GRANTED ACCESS to participate (by Admin) -> Then return all performances
+
+                System.out.println(allData.get(i).isEmployeeParticipation());
+
+                if(check == true) {
+                    return allPerformances;     // If ID is present & GRANTED ACCESS to participate (by Admin) -> Return all performances
+                }
+                if(check == false) {
+                    System.out.println("Your are not GRANTED ACCESS to Participate by Admin!");
+                    return emptyPerformances;   // IF ID is present & NOT GRANTED ACCESS to participate (by Admin) -> Return Empty Data
                 }
             }
         }
+        // IF Employee ID not FOUND
         System.out.println("Wrong Credentials Provided. Your Employee ID Not Found.");
         return emptyPerformances;
     }

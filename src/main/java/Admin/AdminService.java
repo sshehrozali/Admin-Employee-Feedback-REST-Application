@@ -68,6 +68,7 @@ public class AdminService {
             if(d.getEmployeeID().equals(id)) {
                 allData.set(i, data);   // Replace Old Data with new Data (which client has passed)
                 System.out.println("Employee Updated");
+                System.out.println(data.isEmployeeParticipation());
             }
         }
     }
